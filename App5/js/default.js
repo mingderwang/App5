@@ -23,6 +23,9 @@
 
     var stage;
     function init() {
+        var mc = document.getElementById("video1");
+        TweenLite.to(mc, 2, { x: 65, y: 117, rotation: 180 });
+        TweenLite.to(mc, 2, { y: 0, rotation: 90, delay: 2, writeover: false });
         stage = new createjs.Stage("gameCanvas");
         createjs.Ticker.addEventListener("tick", stage);
 
