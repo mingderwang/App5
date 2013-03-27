@@ -17,9 +17,53 @@
                 // TODO: 這個應用程式已經從擱置重新啟用。
                 // 請在這裡還原應用程式狀態。
             }
-            args.setPromise(WinJS.UI.processAll());
+            args.setPromise(WinJS.UI.processAll().then(init));
         }
     };
+
+    var stage;
+    function init() {
+        stage = new createjs.Stage("gameCanvas");
+        createjs.Ticker.addEventListener("tick", stage);
+
+        // Create the MovieClip
+        var mc = new createjs.MovieClip(null, 0, true, {
+            start: 0,
+            middle: 40
+        });
+        stage.addChild(mc);
+
+        // Create the States. Each state is just a circle shape.
+        var state1 = new createjs.Shape(
+        new createjs.Graphics().beginFill("#999999")
+            .drawCircle(100, 100, 100));
+        var state2 = new createjs.Shape(
+        new createjs.Graphics().beginFill("#5a9cfb")
+            .drawCircle(100, 100, 100));
+
+        // Create a tween for each shape, animating from one side to the other.
+        mc.timeline.addTween(
+        createjs.Tween.get(state1)
+            .to({
+                x: 0
+            }).to({
+                x: 760
+            }, 40).to({
+                x: 0
+            }, 40));
+        mc.timeline.addTween(
+        createjs.Tween.get(state2)
+            .to({
+                x: 760
+            }).to({
+                x: 0
+            }, 40).to({
+                x: 760
+            }, 40));
+
+        // Play the animation starting from the middle. See the MovieClip constructor above where the labels are specified.
+        mc.gotoAndPlay("middle");
+    }
 
     app.oncheckpoint = function (args) {
         // TODO: 這個應用程式即將暫停。請在這裡儲存任何

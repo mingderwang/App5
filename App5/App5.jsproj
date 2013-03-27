@@ -47,9 +47,7 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>zh-TW</DefaultLanguage>
-    
     <PackageCertificateKeyFile>App5_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\default.css" />
@@ -61,10 +59,10 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="js\createjs-2013.02.12.min.js" />
     <Content Include="js\default.js" />
-    
+    <Content Include="js\movieclip-0.5.0.min.js" />
     <None Include="App5_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
