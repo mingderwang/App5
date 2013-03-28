@@ -15,8 +15,24 @@ body {
     -ms-grid-columns: 1fr;
     -ms-grid-rows: 1fr;
     display: -ms-grid;
-    height: 768px;
-    width: 1024px;
+    height: 30%;
+    width: 1080px;
+}
+
+.fixedlayout2 {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    height: 30%;
+    width: 1080px;
+}
+
+.fixedlayout3 {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    height: 30%x;
+    width: 1080px;
 }
 
 @media screen and (-ms-view-state: fullscreen-landscape) {

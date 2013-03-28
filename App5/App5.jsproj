@@ -63,6 +63,7 @@
     <Content Include="js\default.js" />
     <Content Include="js\movieclip-0.5.0.min.js" />
     <Content Include="js\TweenMax.min.js" />
+    <Content Include="movies\onethird_60s.mp4" />
     <None Include="App5_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

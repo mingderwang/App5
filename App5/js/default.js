@@ -24,48 +24,15 @@
     var stage;
     function init() {
         var mc = document.getElementById("video1");
-        TweenLite.to(mc, 2, { x: 65, y: 117, rotation: 180 });
-        TweenLite.to(mc, 2, { y: 0, rotation: 90, delay: 2, writeover: false });
-        stage = new createjs.Stage("gameCanvas");
-        createjs.Ticker.addEventListener("tick", stage);
-
-        // Create the MovieClip
-        var mc = new createjs.MovieClip(null, 0, true, {
-            start: 0,
-            middle: 40
-        });
-        stage.addChild(mc);
-
-        // Create the States. Each state is just a circle shape.
-        var state1 = new createjs.Shape(
-        new createjs.Graphics().beginFill("#999999")
-            .drawCircle(100, 100, 100));
-        var state2 = new createjs.Shape(
-        new createjs.Graphics().beginFill("#5a9cfb")
-            .drawCircle(100, 100, 100));
-
-        // Create a tween for each shape, animating from one side to the other.
-        mc.timeline.addTween(
-        createjs.Tween.get(state1)
-            .to({
-                x: 0
-            }).to({
-                x: 760
-            }, 40).to({
-                x: 0
-            }, 40));
-        mc.timeline.addTween(
-        createjs.Tween.get(state2)
-            .to({
-                x: 760
-            }).to({
-                x: 0
-            }, 40).to({
-                x: 760
-            }, 40));
-
-        // Play the animation starting from the middle. See the MovieClip constructor above where the labels are specified.
-        mc.gotoAndPlay("middle");
+        TweenLite.to(mc, 10, { x: 0, y: 0, rotation: 180 });
+        TweenLite.to(mc, 50, { y: 100, rotation: -90, delay: 10, writeover: false });
+        var mc2 = document.getElementById("video2");
+        TweenLite.to(mc2, 10, { x: 0, y: 0,  delay: 60, rotation: 180 });
+        TweenLite.to(mc2, 50, { y: 200, rotation: 90, delay: 70, writeover: false });
+        var mc3 = document.getElementById("video3");
+        TweenLite.to(mc3, 20, { x: 0, y: 0, delay: 120, rotation: 180 });
+        TweenLite.to(mc3, 30, { y: 300, rotation: 180, delay: 140, writeover: false });
+      
     }
 
     app.oncheckpoint = function (args) {
